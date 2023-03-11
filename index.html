@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kebumen</title>
+
+    <!-- All CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script type="text/javascript">
+      function hasilValidasi() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var comment = document.getElementById("comment").value;
+        var error = "";
+        if (!name) {
+          error += "Name is Empty";
+        }
+        if (!email) {
+          error += "Email is Empty";
+        } else if (email.indexOf("@", 0) == -1 || email.indexOf(".", 0) == -1) {
+          error += "Email is Invalid";
+        }
+        if (!comment) {
+          error += "Comment is Empty";
+        }
+        if (error.length > 0) {
+          document.getElementById("validasi").innerHTML = error;
+          return false;
+        } else {
+          document.getElementById("validasi").innerHTML = "Success!!!";
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><span class="text-warning">Kebumen</span>Beriman</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="map.html">Geografis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pariwisata.html">Pariwisata</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="food.html">Food</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      id="carouselExampleIndicators home"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/menganti.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption">
+            <h5 data-aos="fade-up" data-aos-duration="600">Pantai Menganti</h5>
+            <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
+              Pantai Menganti merupakan salah satu pantai terindah di Jawa
+              Tengah. Pasir pantainya yang berwarna putih serta terdapat
+              panorama perbukitan juga tebing karst yang indah.
+            </p>
+            <p><a href="#about" class="btn btn-warning mt-3">Jelajahi</a></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/wadaslintang3.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption">
+            <h5 data-aos="fade-up" data-aos-duration="600">
+              Waduk Wadaslintang
+            </h5>
+            <p>
+              Waduk Wadaslintang merupakan salah satu objek wisata yang cukup
+              unik karena disini Anda bisa menikmati berbagai keindahan alam,
+              wisata air, karamba, irigasi dan yang pasti Anda bisa melihat
+              Pembangkit Listrik Tenaga Air disini.
+            </p>
+            <p><a href="#about" class="btn btn-warning mt-3">Jelajahi</a></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/goa-jatijajar.webp" class="d-block w-100" alt="..." />
+          <div class="carousel-caption">
+            <h5 data-aos="fade-up" data-aos-duration="600">Goa Jatijajar</h5>
+            <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
+              Pemandangan stalagmit dan stalagtit kece dari Gua Jatijajar
+              Kebumen bisa anda nikmati dengan biaya terjangkau.
+            </p>
+            <p><a href="#about" class="btn btn-warning mt-3">Jelajahi</a></p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- about section starts -->
+    <section id="about" class="about section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-12">
+            <div
+              class="about-img"
+              data-aos="fade-right"
+              data-aos-duration="600"
+            >
+              <img src="img/tugu-lawet.jpg" alt="" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+            <div
+              class="about-text"
+              data-aos="fade-left"
+              data-aos-duration="600"
+            >
+              <h2>Tugu Lawet</h2>
+              <p>
+                Tugu Lawet merupakan monumen terkenal yang terletak di Kebumen.
+                Tugu ini erat berkaitan dengan potensi penghasil burung walet
+                terbesar. Sehingga kata Lawet pada nama tugu merupakan
+                penggambaran masyarakat yang berbisnis melalui sarang burung
+                walet.
+                <br />
+                Lawet dalam bahasa setempat di Kebumen merupakan burung laut
+                yang sarangnya banyak diburu oleh orang-orang kaya. Sarang
+                burung walet memiliki kandungan glikoprotein yang meregenerasi
+                kolagen dan dapat menjadi protein di tubuh manusia sehingga
+                mampu membuat kulit menjadi halus dan cerah.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about section Ends -->
+    <!-- map section Starts -->
+    <section id="map" class="map"></section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div
+            class="section-header text-center"
+            data-aos="fade-up"
+            data-aos-duration="600"
+          >
+            <h2>Letak Geografis</h2>
+            <hr class="line-title" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+          <div
+            class="about-text"
+            data-aos="fade-up-right"
+            data-aos-duration="600"
+          >
+            <ol>
+              <h4><li>Batas Wilayah</li></h4>
+              <ul>
+                <li>
+                  Sebelah Timur : Kabupaten Purworejo & Kabupaten Wonosobo
+                </li>
+                <li>Sebelah Utara : Kabupaten Banjarnegara</li>
+                <li>Sebelah Barat : Kabupaten Banyumas & Kabupaten Cilacap</li>
+                <li>Sebelah Selatan : Samudera Hindia</li>
+              </ul>
+              <h4><li>Luas Wilayah dan Penggunaan</li></h4>
+              <p>
+                Kabupaten Kebumen secara administratif terdiri dari 26 kecamatan
+                dengan luas wilayah sebesar 128.111,50 hektar atau 1.281,115
+                km², dengan kondisi beberapa wilayah merupakan daerah pantai dan
+                perbukitan, sedangkan sebagian besar merupakan dataran rendah.
+                <br />
+                Dari luas wilayah Kabupaten Kebumen, pada tahun 2013 tercatat
+                39.748,00 hektar atau sekitar 31,03% merupakan lahan sawah dan
+                88.363,50 hektar atau 68,97% lahan kering. Menurut sistem
+                irigasinya, sebagian besar lahan sawah beririgasi teknis
+                (50,34%), dan hampir seluruhnya dapat ditanami dua kali dalam
+                setahun, beririgasi setengah teknis (9,23%), beririgasi
+                sederhana (5,77%), beririgasi desa (2,65%) dan sebagian berupa
+                sawah tadah hujan dan pasang surut (32,02%).
+                <br />
+                Penggunaan lahan kering (bukan sawah) dibagi menjadi untuk lahan
+                pertanian sebesar 42.799,50 hektar (48,45%) dan bukan untuk
+                pertanian sebesar 45.544,00 hektar (51,55%). Lahan kering untuk
+                pertanian terbagi menjadi untuk tegal/kebun seluas 27.629,00
+                hektar, ladang/huma seluas 745,00 hektar, perkebunan seluas
+                1.159,00 hektar, hutan rakyat seluas 3.011,00 hektar, tambak
+                seluas 24,00 hektar, kolam seluas 53,50 hektar, padang
+                penggembalaan seluas 33,00 hektar, sementara tidak diusahakan
+                seluas 231,00 hektar, dan lainnya seluas 9.914,00 hektar.
+                Sedangkan lahan kering bukan untuk pertanian digunakan untuk
+                bangunan seluas 26.021,00 hektar, hutan negara seluas 16.861,00
+                hektar, rawa-rawa seluas 12,00 hektar serta lainnya seluas 2.670
+                hektar.
+              </p>
+            </ol>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-12">
+          <div
+            class="about-img"
+            data-aos="fade-up-left"
+            data-aos-duration="600"
+          >
+            <img src="img/peta.jpg" alt="" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pariwisata strats -->
+    <section id="pariwisata" class="pariwisata section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div
+              class="section-header text-center pb-5"
+              data-aos="fade-up"
+              data-aos-duration="600"
+            >
+              <h2>Pariwisata</h2>
+              <p>Daftar Tempat Wisata di Kebumen</p>
+              <hr class="line-title" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3" data-aos="zoom-in">
+            <div class="card text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img src="img/menganti.jpg" class="img-fluid" alt="" />
+                </div>
+                <h4 class="card-title">Pantai Menganti</h4>
+                <p class="lead">
+                  Pantai Menganti merupakan salah satu pantai terindah di Jawa
+                  Tengah.
+                </p>
+                <button class="btn bg-warning text-dark">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in">
+            <div class="card text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img src="img/goa-jatijajar-1.jpg" class="img-fluid" alt="" />
+                </div>
+                <h4 class="card-title">Goa Jatijajar</h4>
+                <p class="lead">
+                  Pemandangan stalagmit dan stalagtit yang indah bisa dinikmati
+                  dengan biaya terjangkau.
+                </p>
+                <button class="btn bg-warning text-dark">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in">
+            <div class="card text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img src="img/wadaslintang.jpg" class="img-fluid" alt="" />
+                </div>
+                <h4 class="card-title">Waduk Wadaslintang</h4>
+                <p class="lead">
+                  Keindahan alam, wisata air, karamba, irigasi dan Pembangkit
+                  Listrik Tenaga Air
+                </p>
+                <button class="btn bg-warning text-dark">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in">
+            <div class="card text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img src="img/waduk-sempor.jpg" class="img-fluid" alt="" />
+                </div>
+                <h4 class="card-title">Waduk Sempor</h4>
+                <p class="lead">
+                  Destinasi yang menyuguhkan pemandangan alam yang indah
+                </p>
+                <button class="btn bg-warning text-dark">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in">
+            <div class="card text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img src="img/curug sudimoro.jpg" class="img-fluid" alt="" />
+                </div>
+                <h4 class="card-title">Curug Sudimoro</h4>
+                <p class="lead">
+                  Air yang begitu jernih & iklim yang begitu sejuk di sertai
+                  udara segar yang dapat wisatawan nikmati
+                </p>
+                <button class="btn bg-warning text-dark">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in">
+            <div class="card text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img
+                    src="img/bukit-pentulu-indah.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <h4 class="card-title">Bukit Pentulu Indah</h4>
+                <p class="lead">
+                  Keindahan Sunrise dengan latarbelakang Gunung Sindoro dan
+                  Gunung Sumbing
+                </p>
+                <button class="btn bg-warning text-dark">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in">
+            <div class="card text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img
+                    src="img/Benteng-Vanderwick.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <h4 class="card-title">Benteng VanderWijck</h4>
+                <p class="lead">
+                  Benteng pertahanan Hindia Belanda yang dibangun sekitar tahun
+                  1820
+                </p>
+                <button class="btn bg-warning text-dark">Learn More</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in">
+            <div class="card text-center bg-white pb-2">
+              <div class="card-body text-dark">
+                <div class="img-area mb-4">
+                  <img
+                    src="img/Brujul adventur park.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <h4 class="card-title">Brujul Adventure Park</h4>
+                <p class="lead">
+                  Wisata dengan keunikan dan keajaiban seperti taman sejuta
+                  batu, situs peninggalan, gua-gua, dsb
+                </p>
+                <button class="btn bg-warning text-dark">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- pariwisata ends -->
+    <!-- Food starts -->
+    <section class="food section-padding" id="food">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div
+              class="section-header text-center pb-3"
+              data-aos="fade-up"
+              data-aos-duration="600"
+            >
+              <h2>Makanan</h2>
+              <p>Daftar Makanan Khas Kebumen</p>
+              <hr class="line-title" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3" data-aos="zoom-in-up">
+            <div class="card text-center" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="img/sate ambal.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Sate Ambal</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in-up">
+            <div class="card text-center" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="img/nasi penggel.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Nasi Penggel</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in-up">
+            <div class="card text-center" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="img/sate ambal.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Sate Ambal</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in-up">
+            <div class="card text-center" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="img/Soto Tamanwinangun.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Soto Tamanwinangun</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in-up">
+            <div class="card text-center" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="img/lanting.webp"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Lanting</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in-up">
+            <div class="card text-center" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="img/yutuk goreng.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Yutuk Goreng</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in-up">
+            <div class="card text-center" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="img/Golak-Kebumen.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Golak</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3" data-aos="zoom-in-up">
+            <div class="card text-center" style="width: 18rem">
+              <img
+                class="card-img-top"
+                src="img/jipang-kacang.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Jipang Kacang</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- food ends -->
+    <!-- Contact starts -->
+    <section id="contact" class="contact section-padding">
+      <div class="container mt-5 mb-5">
+        <div class="row">
+          <div class="col-md-12" data-aos="fade-up" data-aos-duration="600">
+            <div class="section-header text-center pb-5">
+              <h2>Contact Us</h2>
+              <p>Berikan Penilaian pada Website ini</p>
+              <hr class="line-title" />
+            </div>
+          </div>
+        </div>
+        <div class="row m-0">
+          <div class="col-md-12 p-0 pt-4 pb-4" data-aos="zoom-out-up">
+            <form
+              action=""
+              method="post"
+              onsubmit="return hasilValidasi();"
+              class="bg-light p-4 m-auto"
+            >
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <input
+                      class="form-control"
+                      placeholder="Nama Lengkap"
+                      required=""
+                      type="text"
+                      name="name"
+                      id="name"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <input
+                      class="form-control"
+                      placeholder="Email"
+                      required=""
+                      type="email"
+                      name="email"
+                      id="email"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="mb-3">
+                    <textarea
+                      class="form-control"
+                      placeholder="Message"
+                      required=""
+                      rows="3"
+                      name="comment"
+                      id="comment"
+                    ></textarea>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-warning btn-lg btn-block mt-3"
+                  type="submit"
+                  name="submi-comment"
+                  id="submi-comment"
+                  value="Submit Comment"
+                >
+                  Kirim Sekarang
+                </button>
+              </div>
+            </form>
+            <h3>Hasil Validasi :</h3>
+            <h3 id="validasi">&nbsp;</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact ends -->
+    <!-- footer starts -->
+    <footer class="bg-dark p-2 text-center">
+      <div class="container">
+        <p class="text-white">All Right Reserved By Rizki Ramadhan</p>
+      </div>
+    </footer>
+    <!-- footer ends -->
+
+    <!-- All Js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
+
+<!--for getting the form download the code from download button-->
